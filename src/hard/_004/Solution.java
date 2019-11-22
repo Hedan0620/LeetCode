@@ -6,14 +6,14 @@ class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int k = nums1.length+nums2.length;
         if(k%2!=0)//奇数
-            return getKth(nums1, nums2, 0, nums1.length - 1, 0, nums2.length - 1, k / 2);
+            return getKth(nums1, nums2, 0, nums1.length - 1, 0, nums2.length - 1, k / 2+1);
         else{
             double midLeft = getKth(nums1,nums2,0,nums1.length-1,0,nums2.length-1,k/2);
             double midRight = getKth(nums1, nums2, 0, nums1.length-1, 0, nums2.length-1, k / 2 + 1);
             return (midLeft+midRight)/2;
         }
     }
-    private int getKth(int[] nums1,int[] nums2,int start1,int end1,int start2,int end2,int k){
+    private int getKth(int[] nums1,int[] nums2,int start1,int end1,int start2,int end2,int k){//k指第几小的元素，是下标+1
         int len1 = end1 - start1 + 1;
         int len2 = end2 - start2 + 1;
         //结束递归
@@ -38,8 +38,8 @@ class Solution {
 
     public static void main(String[] args) {
         Solution a = new Solution();
-        int[] arr1 = {1,3};
-        int[] arr2 = {2};
+        int[] arr1 = {1,2,3,4,5,6};
+        int[] arr2 = {3,4,5};
         System.out.println(a.findMedianSortedArrays(arr1,arr2));
     }
 }
