@@ -57,6 +57,6 @@ class Solution {
     }
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.myAtoi("-91283472332"));
+        System.out.println(s.myAtoi("18446744073709551617"));
     }
 }

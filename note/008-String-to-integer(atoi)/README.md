@@ -1,5 +1,7 @@
 ## [8. String to Integer (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/)
 
+## 题目
+
 Implement atoi which converts a string to an integer.
 
 The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
@@ -58,10 +60,12 @@ Explanation: The number "-91283472332" is out of the range of a 32-bit signed in
 
 ## 解题思路：
 
-1. 把String转换成char[]查找里面的数字；
+1. 把String转换成char[]查找里面的数字，注意数字的+-，把数字翻10倍和相加的方式转成整数；
 2. 单独处理str为空串和null的情况；
 
 但是代码太多if-else，可读性差，改进版本Solution2.java
+
+注意整数可能会超过long的范围，因此在计算过程中要先判断是否超过范围。
 
 ##### 区分空串和null：
 
