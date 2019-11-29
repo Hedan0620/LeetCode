@@ -38,7 +38,7 @@ class Solution3 {
                 else if(p.charAt(j)=='*'){
                     if(p.charAt(j-1)!=s.charAt(i) && p.charAt(j-1)!='.')
                     {
-                        //*可以表示下标为j的元素取0个
+                        //*可以表示下标为j-1的元素取0个
                         dp[i+1][j+1] = dp[i+1][j-1];
                     }
                     else {
